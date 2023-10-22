@@ -16,7 +16,7 @@ public class NodoBasico<E extends RepresentacionEstado<E>> {
     private E padre = null;
 
     /**
-     * @param padre del NodoBasico
+     * @param p padre del NodoBasico
      */
     public NodoBasico(E p){
         this.padre = p;

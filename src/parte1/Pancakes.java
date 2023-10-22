@@ -23,6 +23,7 @@ public class Pancakes extends OverrideHashCode implements RepresentacionEstadoOp
     public List<Pancakes> calculaSucesores() {
         List<Pancakes> lista = new ArrayList<>();
 
+        // To-Do
         for (int i = this.pancakes.size(); i > 0; i--){
             if (this.pancakes.get(i - 1) != i){
                 // Flip the first "half"

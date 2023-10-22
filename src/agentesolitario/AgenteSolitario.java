@@ -64,7 +64,7 @@ public abstract class AgenteSolitario<E extends OverrideHashCode & Representacio
         
                
         while (e!=null && !this.esFinal(e)) {
-            for (E e2 : (List<E>)e.calculaSucesores()){//lista) {//Ettado.hijos()) {
+            for (E e2 : (List<E>)e.calculaSucesores()){
                 if (!a.contains(e2)) {
                     abiertos.offer(e2);
                     a.put(e2, new NodoBasico<E>(e));

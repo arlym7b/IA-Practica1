@@ -34,7 +34,7 @@ public class Puzzle extends OverrideHashCode implements RepresentacionEstadoOpti
     /**
      * Constructor para el usuario.
      * @param nFilas    Numero de filas del tablero.
-     * @param cColumnas Numero de columnas del tablero.
+     * @param nColumnas Numero de columnas del tablero.
      */
     public Puzzle (int nFilas, int nColumnas) {
         this.tab = new int[nFilas][nColumnas];

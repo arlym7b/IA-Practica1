@@ -1,8 +1,8 @@
-package parte1;
+package pancakes;
 
 import agentesolitario.AgenteSolitario;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Collections;
 import java.util.List;
 
@@ -21,9 +21,8 @@ public class AgentePancakes extends AgenteSolitario<Pancakes> {
         return isCollectionSorted(pancakes.pancakes);
     }
 
-    // I have to check that the sort is ascending
-    private boolean isCollectionSorted(List list) {
-        List copy = new ArrayList(list);
+    private boolean isCollectionSorted(List<Integer> list) {
+        List<Integer> copy = new LinkedList<>(list);
         Collections.sort(copy);
         return copy.equals(list);
     }

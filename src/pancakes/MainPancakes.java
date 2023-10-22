@@ -1,8 +1,6 @@
-package parte1;
+package pancakes;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class MainPancakes {
     public static void main(String[] args) {
@@ -23,6 +21,8 @@ public class MainPancakes {
         //Pancakes pancakes = new Pancakes(Arrays.asList(2,4,3,1,5));
         Pancakes pancakes = new Pancakes(Arrays.asList(7,3,1,6,2,4,5));
 
+        System.out.println(pancakes.toString());
+
         System.out.println("Sucesores");
         for (Pancakes pancakes2: pancakes.calculaSucesores()){
             System.out.println(pancakes2.toString());
@@ -30,16 +30,15 @@ public class MainPancakes {
     }
 
     public static void test_final(){
-        //Pancakes pancakes = new Pancakes(Arrays.asList(2,4,3,1,5));
-        Pancakes pancakes = new Pancakes(Arrays.asList(7,3,1,6,2,4,5));
-        System.out.println(pancakes.toString());
+        Pancakes pancakes = new Pancakes(getIntegerList());
 
-        System.out.println("Solucion:");
         AgentePancakes ag = new AgentePancakes(pancakes);
 
         List<Pancakes> solucion = ag.amplitud();
 
         if (solucion != null){
+            // La solución devuelve el estado inicial también, no podemos contarlo como movimiento
+            System.out.println("Solucion (" + (solucion.size() - 1) + " movimientos):");
             for (Pancakes pancakes2: solucion){
                 System.out.println(pancakes2.toString());
             }
@@ -47,6 +46,23 @@ public class MainPancakes {
         else {
             System.out.println("No se encontro solucion");
         }
+    }
+
+    private static List<Integer> getIntegerList() {
+        List<Integer> pancake_list;
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.println("Introduce los tamaños de los pancakes separados por espacios:");
+            pancake_list = new ArrayList<>();
+            String line = scanner.nextLine();
+            String[] numbers = line.split(" ");
+            for (String number: numbers) {
+                pancake_list.add(Integer.parseInt(number));
+            }
+        }
+        catch (RuntimeException exception){
+            throw new RuntimeException("No se ha introducido ningún pancake");
+        }
+        return pancake_list;
     }
 
 }

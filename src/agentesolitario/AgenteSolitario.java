@@ -22,6 +22,7 @@ import mundosolitario.RepresentacionEstadoOptimizacion;
  */
 public abstract class AgenteSolitario<E extends OverrideHashCode & RepresentacionEstadoOptimizacion<E>> { 
 	public E salida;
+    public int iteraciones;
     
 	/**
 	 * Guarda el estado de salida.
@@ -117,6 +118,7 @@ public abstract class AgenteSolitario<E extends OverrideHashCode & Representacio
         if (!exito) {
             return null;
         } else {
+            this.setIteraciones(it);
             List<E> solucion = arbol.recuperaSolucion(e);
             //System.out.println("Nodos expandidos: " + it);
             //System.out.println("Longitud de la solucion: " + solucion.toArray().length);
@@ -186,5 +188,12 @@ public abstract class AgenteSolitario<E extends OverrideHashCode & Representacio
             return bid(e, cota+1);
         }
     }
-  
+
+    public int getIteraciones() {
+        return iteraciones;
+    }
+
+    public void setIteraciones(int iteraciones) {
+        this.iteraciones = iteraciones;
+    }
 }

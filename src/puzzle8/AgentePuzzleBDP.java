@@ -17,15 +17,13 @@ public class AgentePuzzleBDP extends AgentePuzzleH0
     private int numCol = -1;
     private int numComodines = -1;
     private int numPiezas = -1;
-    private int iteraciones;
     private static final int COMODIN = -1;
     /**
      * Constructor. Establece el estado de salida del problema y calcula una BDP con el numero de comodines indicado.
      */
     public AgentePuzzleBDP(Puzzle p, int comodines){
         super(p);
-        int iteraciones = calculaBDP(comodines);
-        this.setIteraciones(iteraciones);
+        calculaBDP(comodines);
     }
 
     /**
@@ -49,13 +47,12 @@ public class AgentePuzzleBDP extends AgentePuzzleH0
      * comodines indicado.
      *
      * @param  n numero de fichas comodin.
-     * @return it numero de iteraciones.
      */
-    public int calculaBDP(int n)
+    public void calculaBDP(int n)
     {
         if (n < 0 || n >= this.salida.nf() * this.salida.nc()){
             System.out.println("Numero incorrecto de comodines para generar la BDP");
-            return -1;
+            return;
         }
                 
         int nf = this.salida.nf();
@@ -103,8 +100,8 @@ public class AgentePuzzleBDP extends AgentePuzzleH0
             it += 1;
         }
         
-        //System.out.println("Entradas en la tabla: " + it);
-        return it;
+        System.out.println("Entradas en la tabla: " + it);
+        
     }
        
     /**
@@ -138,11 +135,4 @@ public class AgentePuzzleBDP extends AgentePuzzleH0
         }
     }
 
-    public int getIteraciones() {
-        return iteraciones;
-    }
-
-    public void setIteraciones(int iteraciones) {
-        this.iteraciones = iteraciones;
-    }
 }

@@ -11,9 +11,9 @@ public class TestPuzzle {
     
     public static void main(String[] args) {
     	//testH0();
-    	testDPB(5);
+    	//testDPB(5);
 
-
+        test_multiple();
     }
     
     public static void testH0(){
@@ -82,7 +82,14 @@ public class TestPuzzle {
         AgentePuzzleManh manh2 = new AgentePuzzleManh(puzzle2);
         List<Puzzle> lmanh2 = manh2.aMono();
 
-        System.out.println(h01.getIteraciones());
+        // Imprimimos la tabla de iteraciones
+        System.out.println("Número de iteraciones:");
+        System.out.println("Puzzle  A_ciegas  H_bdp4  H_bdp5  H_desc  H_Manh");
+        System.out.println("-------------------------------------------------");
+        System.out.println("puzzle1   " + h01.getIteraciones() + "      " + bdp14.getIteraciones() + "      " +
+                + bdp15.getIteraciones() + "      " + desc1.getIteraciones() + "      " + manh1.getIteraciones());
+        System.out.println("puzzle2    " + h02.getIteraciones() + "      " + bdp24.getIteraciones() + "      " +
+                + bdp25.getIteraciones() + "      " + desc2.getIteraciones() + "      " + manh2.getIteraciones());
     }
 
 }

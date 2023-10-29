@@ -59,9 +59,6 @@ public class MainPancakes {
                 pancake_list.add(Integer.parseInt(number));
             }
         }
-        catch (RuntimeException exception){
-            throw new RuntimeException("No se ha introducido ningún pancake");
-        }
         return pancake_list;
     }
 

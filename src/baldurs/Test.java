@@ -8,22 +8,19 @@ import java.util.Scanner;
 public class Test {
     public static void main(String[] args) {
         //char[][] grid = new char[][];
-        ArrayList<char[]> grid = new ArrayList<>();
 
         String ruta = "src/baldurs/mapas/AR0011SR.map";
         File file = new File(ruta);
 
+        ArrayList<char[]> grid = new ArrayList<>();
+
         try (Scanner scanner = new Scanner(file)) {
-            int contador_linea = 0;
-            int contador_fila = 0;
             while (scanner.hasNextLine()){
                 String linea = scanner.nextLine();
 
                 // Podemos asumir que @ y . solo forman parte del mapa en el .map y no se encuentran en otras lineas
-                if (!linea.isEmpty() && (linea.contains("."))){
+                if (!linea.isEmpty() && (linea.contains(".") || linea.contains("@"))){
                     grid.add(linea.toCharArray());
-
-                    contador_fila++;
                 }
             }
 

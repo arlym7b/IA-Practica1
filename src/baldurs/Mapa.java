@@ -50,49 +50,49 @@ public class Mapa extends OverrideHashCode implements RepresentacionEstadoOptimi
 
         punto.setPunto(this.posicion_jugador.getX() + 1, this.posicion_jugador.getY());
         if (this.grid[punto.getX()][punto.getY()] == HUECO){
-            Mapa sucesor = new Mapa(this.grid, punto, this.posicion_objetivo);
+            Mapa sucesor = new Mapa(this.grid, new Punto(punto.getX(), punto.getY()), this.posicion_objetivo);
             sucesores.add(sucesor);
         }
 
         punto.setPunto(this.posicion_jugador.getX() - 1, this.posicion_jugador.getY());
         if (this.grid[punto.getX()][punto.getY()] == HUECO){
-            Mapa sucesor = new Mapa(this.grid, punto, this.posicion_objetivo);
+            Mapa sucesor = new Mapa(this.grid, new Punto(punto.getX(), punto.getY()), this.posicion_objetivo);
             sucesores.add(sucesor);
         }
 
         punto.setPunto(this.posicion_jugador.getX(), this.posicion_jugador.getY() + 1);
         if (this.grid[punto.getX()][punto.getY()] == HUECO){
-            Mapa sucesor = new Mapa(this.grid, punto, this.posicion_objetivo);
+            Mapa sucesor = new Mapa(this.grid, new Punto(punto.getX(), punto.getY()), this.posicion_objetivo);
             sucesores.add(sucesor);
         }
 
         punto.setPunto(this.posicion_jugador.getX(), this.posicion_jugador.getY() - 1);
         if (this.grid[punto.getX()][punto.getY()] == HUECO){
-            Mapa sucesor = new Mapa(this.grid, punto, this.posicion_objetivo);
+            Mapa sucesor = new Mapa(this.grid, new Punto(punto.getX(), punto.getY()), this.posicion_objetivo);
             sucesores.add(sucesor);
         }
 
         punto.setPunto(this.posicion_jugador.getX() + 1, this.posicion_jugador.getY() + 1);
         if (this.grid[punto.getX()][punto.getY()] == HUECO){
-            Mapa sucesor = new Mapa(this.grid, punto, this.posicion_objetivo);
+            Mapa sucesor = new Mapa(this.grid, new Punto(punto.getX(), punto.getY()), this.posicion_objetivo);
             sucesores.add(sucesor);
         }
 
         punto.setPunto(this.posicion_jugador.getX() + 1, this.posicion_jugador.getY() - 1);
         if (this.grid[punto.getX()][punto.getY()] == HUECO){
-            Mapa sucesor = new Mapa(this.grid, punto, this.posicion_objetivo);
+            Mapa sucesor = new Mapa(this.grid, new Punto(punto.getX(), punto.getY()), this.posicion_objetivo);
             sucesores.add(sucesor);
         }
 
         punto.setPunto(this.posicion_jugador.getX() - 1, this.posicion_jugador.getY() + 1);
         if (this.grid[punto.getX()][punto.getY()] == HUECO){
-            Mapa sucesor = new Mapa(this.grid, punto, this.posicion_objetivo);
+            Mapa sucesor = new Mapa(this.grid, new Punto(punto.getX(), punto.getY()), this.posicion_objetivo);
             sucesores.add(sucesor);
         }
 
         punto.setPunto(this.posicion_jugador.getX() - 1, this.posicion_jugador.getY() - 1);
         if (this.grid[punto.getX()][punto.getY()] == HUECO){
-            Mapa sucesor = new Mapa(this.grid, punto, this.posicion_objetivo);
+            Mapa sucesor = new Mapa(this.grid, new Punto(punto.getX(), punto.getY()), this.posicion_objetivo);
             sucesores.add(sucesor);
         }
 

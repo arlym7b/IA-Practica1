@@ -102,12 +102,14 @@ public class Mapa extends OverrideHashCode implements RepresentacionEstadoOptimi
     @Override
     public int costeArco(Mapa destino) {
         Punto punto_destino = destino.getPosicion_jugador();
-        if (punto_destino.getX() == this.posicion_jugador.getX() ||
-                punto_destino.getY() == this.posicion_jugador.getY()){
-            return 1000;
-        } else {
-            return 1414;
+        // Por defecto un movimiento normal cuesta 1000
+        int coste = 1000;
+        // Si ambas coordenadas son distintas entre actual y destino, el movimiento es diagonal
+        if (punto_destino.getX() != this.posicion_jugador.getX() &&
+                punto_destino.getY() != this.posicion_jugador.getY()){
+            coste = 1414;
         }
+        return coste;
     }
 
     public char[][] getGrid() {

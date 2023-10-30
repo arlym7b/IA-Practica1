@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Test {
     public static void main(String[] args) {
-        //char[][] grid = new char[][];
+        // Test para imprimir el mapa entero y comprobar que se lee bien del archivo
 
         String ruta = "src/baldurs/mapas/AR0011SR.map";
         File file = new File(ruta);

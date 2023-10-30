@@ -2,27 +2,23 @@ package baldurs;
 
 import agentesolitario.AgenteSolitario;
 
-public class AgenteOctile extends AgenteSolitario<Mapa> {
+public class AgenteOctile extends AgenteSolitario<Punto> {
     private static final int COSTE_SIMPLE = 1000;
     private static final int COSTE_DIAGONAL = 1414;
-    /**
-     * Guarda el estado de salida.
-     *
-     * @param mapa estado de salida
-     */
-    protected AgenteOctile(Mapa mapa) {
-        super(mapa);
+
+    public AgenteOctile(Punto punto) {
+        super(punto);
     }
 
     @Override
-    public boolean esFinal(Mapa mapa) {
-        return mapa.getPosicion_jugador().equals(mapa.getPosicion_objetivo());
+    public boolean esFinal(Punto punto) {
+        return punto.equals(TestMapa.getPosicion_objetivo());
     }
 
     @Override
-    public int h(Mapa mapa) {
-        int diferencia_filas = Math.abs(mapa.getPosicion_jugador().getX() - mapa.getPosicion_objetivo().getX());
-        int diferencia_columnas = Math.abs(mapa.getPosicion_jugador().getY() - mapa.getPosicion_objetivo().getY());
+    public int h(Punto punto) {
+        int diferencia_filas = Math.abs(punto.getX() - TestMapa.getPosicion_objetivo().getX());
+        int diferencia_columnas = Math.abs(punto.getY() - TestMapa.getPosicion_objetivo().getY());
 
         int h1 = diferencia_filas * COSTE_DIAGONAL + (diferencia_columnas - diferencia_filas) * COSTE_SIMPLE;
         int h2 = diferencia_columnas * COSTE_DIAGONAL + (diferencia_filas - diferencia_columnas) * COSTE_SIMPLE;

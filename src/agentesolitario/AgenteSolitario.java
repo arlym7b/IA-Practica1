@@ -122,7 +122,7 @@ public abstract class AgenteSolitario<E extends OverrideHashCode & Representacio
             List<E> solucion = arbol.recuperaSolucion(e);
             //System.out.println("Nodos expandidos: " + it);
             //System.out.println("Longitud de la solucion: " + solucion.toArray().length);
-            //System.out.println("Coste de la solucion: " + arbol.get(e).getG());
+            System.out.println("Coste de la solucion: " + arbol.get(e).getG());
             return solucion;
         }//if !exito
     }

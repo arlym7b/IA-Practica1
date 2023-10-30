@@ -19,8 +19,8 @@ public class AgentePuzzleManh extends AgentePuzzleH0{
         int posicion_bucle = 0;
         for (int i = 0; i < tablero.length; i++){
             for (int j = 0; j < tablero[i].length; j++){
-                if (tablero[i][j] != posicion_bucle){
-                    piezas_descolocadas += abs(i - tablero[i][j]/tablero.length) +
+                if (tablero[i][j] != posicion_bucle && tablero[i][j] != 0){
+                    piezas_descolocadas += abs(i - tablero[i][j]/tablero[i].length) +
                             abs(j - tablero[i][j]%tablero[i].length);
                 }
                 posicion_bucle++;

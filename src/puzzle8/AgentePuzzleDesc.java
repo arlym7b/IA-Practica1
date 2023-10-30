@@ -17,7 +17,7 @@ public class AgentePuzzleDesc extends AgentePuzzleH0{
         int posicion_bucle = 0;
         for (int i = 0; i < tablero.length; i++){
             for (int j = 0; j < tablero[i].length; j++){
-                if (tablero[i][j] != posicion_bucle){
+                if (tablero[i][j] != posicion_bucle && tablero[i][j] != 0){
                     piezas_descolocadas++;
                 }
                 posicion_bucle++;
